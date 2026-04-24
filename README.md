@@ -3,23 +3,16 @@
 A production-grade Kubernetes deployment built as part of a challenge I am currently doing
 
 ## Architecture
-Browser (Host: web.local)
-    │
-    ▼
-Ingress Controller (nginx)
-    │
-    └── hostname-based routing
-            │
-            ▼
-      Service (NodePort :31437)
-            │
-            └── load balances across pods
-                    │
-                    ├── Pod 1
-                    ├── Pod 2
-                    └── Pod 3
-                         │
-                         └── ConfigMap (HTML content)
+```mermaid
+graph TD
+    A[Browser (web.local)] --> B[Ingress Controller (nginx)]
+    B --> C[Service NodePort :31437]
+    C --> D[Pod 1]
+    C --> E[Pod 2]
+    C --> F[Pod 3]
+    D --> G[ConfigMap]
+    E --> G
+    F --> G
 
 ## AWS to Kubernetes mapping
 
