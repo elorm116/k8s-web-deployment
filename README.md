@@ -4,18 +4,22 @@ A production-grade Kubernetes deployment built as part of my #100DaysOfDevOps ch
 
 ## Architecture
 Browser (Host: web.local)
-│
-▼
+    │
+    ▼
 Ingress Controller (nginx)
-│ hostname-based routing
-▼
-Service (NodePort :31437)
-│ load balances across pods
-├── Pod 1
-├── Pod 2
-└── Pod 3
-│
-└── ConfigMap (HTML content)
+    │
+    └── hostname-based routing
+            │
+            ▼
+      Service (NodePort :31437)
+            │
+            └── load balances across pods
+                    │
+                    ├── Pod 1
+                    ├── Pod 2
+                    └── Pod 3
+                         │
+                         └── ConfigMap (HTML content)
 
 ## AWS to Kubernetes mapping
 
