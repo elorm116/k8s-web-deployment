@@ -1,6 +1,6 @@
 # Kubernetes Web Deployment
 
-A production-grade Kubernetes deployment built as part of my #100DaysOfDevOps challenge (Days 32-35).
+A production-grade Kubernetes deployment built as part of a challenge I am currently doing
 
 ## Architecture
 Browser (Host: web.local)
